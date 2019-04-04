@@ -13,7 +13,12 @@ export class Asignatura32Page implements OnInit {
   volver(){
     this.navCtrl.navigateForward('home');
   }
+  numeros(){
+  try{
 
+  }catch(e){
+    
+  };}
   ngOnInit() {
   }
 
