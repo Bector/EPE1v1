@@ -37,7 +37,7 @@ export class RespuestaPage implements OnInit {
 
    // }
 
-
+//asdasda
 
     this.resto=((this.suma)*0.3)/0.7;
     this.promedio=this.resto+this.suma;
