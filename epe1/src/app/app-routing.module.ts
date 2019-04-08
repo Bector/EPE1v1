@@ -9,6 +9,8 @@ const routes: Routes = [
   { path: 'asignatura96', loadChildren: './asignatura96/asignatura96.module#Asignatura96PageModule' },
   { path: 'asignatura128', loadChildren: './asignatura128/asignatura128.module#Asignatura128PageModule' },
   { path: 'acerca', loadChildren: './acerca/acerca.module#AcercaPageModule' },
+  { path: 'respuesta/:suma', loadChildren: './respuesta/respuesta.module#RespuestaPageModule' },
+
 ];
 
 @NgModule({
