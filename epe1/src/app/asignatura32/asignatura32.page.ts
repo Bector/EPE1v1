@@ -51,7 +51,7 @@ export class Asignatura32Page implements OnInit {
       
     }
     
-    
+    //chupalo
   }
 
   volver(){
