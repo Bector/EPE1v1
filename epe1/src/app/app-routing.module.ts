@@ -9,7 +9,9 @@ const routes: Routes = [
   { path: 'asignatura96', loadChildren: './asignatura96/asignatura96.module#Asignatura96PageModule' },
   { path: 'asignatura128', loadChildren: './asignatura128/asignatura128.module#Asignatura128PageModule' },
   { path: 'acerca', loadChildren: './acerca/acerca.module#AcercaPageModule' },
-  { path: 'respuesta/:epe1/:epe2/:epe3/:eva1/:eva2', loadChildren: './respuesta/respuesta.module#RespuestaPageModule' },  { path: 'menu', loadChildren: './menu/menu.module#MenuPageModule' },
+  { path: 'respuesta/:epe1/:epe2/:epe3/:eva1/:eva2', loadChildren: './respuesta/respuesta.module#RespuestaPageModule' },
+  { path: 'menu', loadChildren: './menu/menu.module#MenuPageModule' },
+  { path: 'respuesta128/:epe1/:epe2/:epe3/:epe4/:eva1/:eva2/:eva3/:eva4', loadChildren: './respuesta128/respuesta128.module#Respuesta128PageModule' },
 
 
 ];

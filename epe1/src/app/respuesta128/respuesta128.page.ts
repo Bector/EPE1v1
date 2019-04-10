@@ -7,19 +7,22 @@ import { AlertController } from '@ionic/angular';
 
 
 @Component({
-  selector: 'app-respuesta',
-  templateUrl: './respuesta.page.html',
-  styleUrls: ['./respuesta.page.scss'],
+  selector: 'app-respuesta128',
+  templateUrl: './respuesta128.page.html',
+  styleUrls: ['./respuesta128.page.scss'],
 })
-export class RespuestaPage implements OnInit {
+export class Respuesta128Page implements OnInit {
 
   constructor(public ActivatedRoute: ActivatedRoute, public navCtrl: NavController, public alertController: AlertController) { }
 
   epe1n: any;
   epe2n: any;
   epe3n: any;
+  epe4n: any;
   eva1n: any;
   eva2n: any;
+  eva3n: any;
+  eva4n: any;
   examen:any;
   mensaje:any;
   suma: any;
@@ -28,19 +31,22 @@ export class RespuestaPage implements OnInit {
  
 
   volver(){
-    this.navCtrl.navigateBack('asignatura32');
+    this.navCtrl.navigateBack('asignatura128');
   }
 
   async calcular(){
     this.epe1n = this.ActivatedRoute.snapshot.paramMap.get('epe1');
     this.epe2n = this.ActivatedRoute.snapshot.paramMap.get('epe2');
     this.epe3n = this.ActivatedRoute.snapshot.paramMap.get('epe3');
+    this.epe4n = this.ActivatedRoute.snapshot.paramMap.get('epe4');
     this.eva1n = this.ActivatedRoute.snapshot.paramMap.get('eva1');
     this.eva2n = this.ActivatedRoute.snapshot.paramMap.get('eva2');
+    this.eva3n = this.ActivatedRoute.snapshot.paramMap.get('eva3');
+    this.eva4n = this.ActivatedRoute.snapshot.paramMap.get('eva4');
 
     //Formula con examen
-    this.suma = ((this.epe1n * 0.07) + (this.epe2n * 0.14) + 
-    (this.epe3n * 0.21) + (this.eva1n * 0.14) + (this.eva2n * 0.14)+(this.examen*0.3));
+    this.suma = ((this.epe1n * 0.07) + (this.epe2n * 0.105) + 
+    (this.epe3n * 0.175) + (this.epe4n * 0.175) + (this.eva1n * 0.035) + (this.eva2n * 0.035) + (this.eva3n * 0.035) + (this.eva4n * 0.07) +(this.examen*0.3));
 
     this.sumadecimal= this.suma.toFixed(1);
 
@@ -81,12 +87,16 @@ if(this.sumadecimal<4.0){
     this.epe1n = this.ActivatedRoute.snapshot.paramMap.get('epe1');
     this.epe2n = this.ActivatedRoute.snapshot.paramMap.get('epe2');
     this.epe3n = this.ActivatedRoute.snapshot.paramMap.get('epe3');
+    this.epe4n = this.ActivatedRoute.snapshot.paramMap.get('epe4');
     this.eva1n = this.ActivatedRoute.snapshot.paramMap.get('eva1');
     this.eva2n = this.ActivatedRoute.snapshot.paramMap.get('eva2');
+    this.eva3n = this.ActivatedRoute.snapshot.paramMap.get('eva3');
+    this.eva4n = this.ActivatedRoute.snapshot.paramMap.get('eva4');
 
     //Formula sin examen
-    this.suma = ((this.epe1n * 0.1) + (this.epe2n * 0.2) + 
-    (this.epe3n * 0.3) + (this.eva1n * 0.2) + (this.eva2n * 0.2));
+
+    this.suma = ((this.epe1n * 0.1) + (this.epe2n * 0.15) + (this.epe3n * 0.25) + (this.epe4n * 0.25) + (this.eva1n * 0.05) + (this.eva2n * 0.05) + (this.eva3n * 0.05) + (this.eva4n * 0.1));
+
 
     this.sumadecimal= this.suma.toFixed(1);
     if(this.sumadecimal<5.5){
@@ -96,3 +106,4 @@ if(this.sumadecimal<4.0){
   }
 
 }
+
