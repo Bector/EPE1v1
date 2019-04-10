@@ -44,7 +44,7 @@ export class RespuestaPage implements OnInit {
 
     this.sumadecimal= this.suma.toFixed(1);
 
-    //alerta aprovado
+    //alerta aprobado
     const alert =  await this.alertController.create({
       header: 'Felicitaciones',
       subHeader: 'Aprobaste',
@@ -58,12 +58,21 @@ export class RespuestaPage implements OnInit {
       message: 'Tu promedio es: '+this.sumadecimal,
       buttons: ['OK']
     });
-
-    if(this.sumadecimal<4.0){
-      await alert2.present();
+if(this.examen>7){
+  const alert3 =  await this.alertController.create({
+    header: 'Lo sentimos',
+    message: 'La nota no puede ser superior a 7.0',
+    buttons: ['OK']
+  });
+await alert3.present();
+}else{
+if(this.sumadecimal<4.0){
+      
     }else{
       await alert.present();
     }
+}
+    
 
 
   }
