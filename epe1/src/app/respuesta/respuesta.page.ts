@@ -97,7 +97,7 @@ if(this.sumadecimal<4.0){
 
 
     this.sumadecimal= this.suma.toFixed(1);
-    if(this.sumadecimal<5.5 || this.evaaa <= 3.9){
+    if(this.sumadecimal<5.5 || this.evaaa < 4){
       this.mensaje="Te fuiste a examen con un: "+this.sumadecimal;
     }
 
