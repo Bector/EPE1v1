@@ -70,11 +70,7 @@ if(this.examen>7){
 await alert3.present();
 }else{
 if(this.sumadecimal<4.0){
-<<<<<<< HEAD
-      await alert2.present();
-=======
   await alert2.present();
->>>>>>> f6f43b9acb84fb491fd812e462b5a23c52e66a77
     }else{
       await alert.present();
     }
