@@ -9,19 +9,12 @@ import { NavController } from '@ionic/angular';
 export class HomePage {
   constructor(public navCtrl: NavController){}
 
-  ir32(){
-    this.navCtrl.navigateForward('asignatura32');
+  irMenu(){
+    this.navCtrl.navigateForward('menu');
   }
-  ir64(){
-    this.navCtrl.navigateForward('asignatura64');
-  }
-  ir96(){
-    this.navCtrl.navigateForward('asignatura96');
-  }
-  ir128(){
-    this.navCtrl.navigateForward('asignatura128');
-  }
+
   irAcerca(){
     this.navCtrl.navigateForward('acerca');
   }
+
 }

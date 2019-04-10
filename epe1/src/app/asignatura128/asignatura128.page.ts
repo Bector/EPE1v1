@@ -11,7 +11,7 @@ export class Asignatura128Page implements OnInit {
   constructor(public navCtrl: NavController){}
 
   volver(){
-    this.navCtrl.navigateForward('home');
+    this.navCtrl.navigateBack('menu');
   }
 
   ngOnInit() {

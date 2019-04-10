@@ -1,41 +1,30 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Menu
+      Inicio
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-          <ion-button expand="block" color="success" (click)="ir32()">Asignatura 32 hrs</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-          <ion-button expand="block" color="success" (click)="ir64()">Asignatura 64hrs</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-          <ion-button expand="block" color="success" (click)="ir96()">Asignatura 96 hrs</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-          <ion-button expand="block" color="success" (click)="ir128()">Asignatura 128 hrs</ion-button>
-      </ion-col>
-    </ion-row>                   
 
-  </ion-grid>
+  <ion-card>
+    <img src="assets/img/calculadora.jpg">
+    <ion-card-content>
+      <ion-card-title>Calculador de Promedios</ion-card-title>
+      <br>
+      <p>Aqui podras calcular tu promedio segun la cantidad de horas que tiene tu asignatura</p>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
+
 <ion-footer>
   <ion-toolbar>
     <ion-grid>
       <ion-row>
         <ion-col>
+          <ion-button expand="block" position="top" (click)="irMenu()" color="success">Menu</ion-button>
           <ion-button expand="block" position="top" (click)="irAcerca()">Acerca de</ion-button>
         </ion-col>
       </ion-row>

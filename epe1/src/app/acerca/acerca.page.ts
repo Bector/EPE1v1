@@ -11,7 +11,7 @@ export class AcercaPage implements OnInit {
   constructor(public navCtrl: NavController){}
 
   volver(){
-    this.navCtrl.navigateForward('home');
+    this.navCtrl.navigateBack('home');
   }
 
   ngOnInit() {
