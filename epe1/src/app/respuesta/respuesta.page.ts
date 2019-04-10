@@ -12,6 +12,9 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./respuesta.page.scss'],
 })
 export class RespuestaPage implements OnInit {
+  promeva: number;
+  evaaa: number;
+  asd: number;
 
   constructor(public ActivatedRoute: ActivatedRoute, public navCtrl: NavController, public alertController: AlertController) { }
 
@@ -87,9 +90,14 @@ if(this.sumadecimal<4.0){
     //Formula sin examen
     this.suma = ((this.epe1n * 0.1) + (this.epe2n * 0.2) + 
     (this.epe3n * 0.3) + (this.eva1n * 0.2) + (this.eva2n * 0.2));
+    
+    this.promeva=(this.eva1n * 0.2) + (this.eva2n * 0.2);
+    this.evaaa=((this.promeva)*0.6)/0.4;
+    this.asd=this.promeva+this.evaaa;
+
 
     this.sumadecimal= this.suma.toFixed(1);
-    if(this.sumadecimal<5.5){
+    if(this.sumadecimal<5.5 || this.evaaa <= 3.9){
       this.mensaje="Te fuiste a examen con un: "+this.sumadecimal;
     }
 

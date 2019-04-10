@@ -23,7 +23,10 @@ export class Respuesta64Page implements OnInit {
   examen:any;
   mensaje:any;
   suma: any;
+  promeva:any;
   sumadecimal:any;
+  evaaa:any;
+  asd:any;
   
  
 
@@ -90,8 +93,13 @@ if(this.sumadecimal<4.0){
     this.suma = ((this.epe1n * 0.1) + (this.epe2n * 0.2) + 
     (this.epe3n * 0.3) + (this.eva1n * 0.1) + (this.eva2n * 0.1)+(this.eva3n*0.2));
 
+    this.promeva=(this.eva1n * 0.1) + (this.eva2n * 0.1) + (this.eva3n * 0.2);
+    this.evaaa=((this.promeva)*0.6)/0.4;
+    this.asd=this.promeva+this.evaaa;
+
+
     this.sumadecimal= this.suma.toFixed(1);
-    if(this.sumadecimal<5.5){
+    if(this.sumadecimal<5.5 || this.evaaa <= 3.9){
       this.mensaje="Te fuiste a examen con un: "+this.sumadecimal;
     }
 
