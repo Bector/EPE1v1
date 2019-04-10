@@ -5,16 +5,12 @@ import { NavController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 
 
-
 @Component({
-  selector: 'app-respuesta',
-  templateUrl: './respuesta.page.html',
-  styleUrls: ['./respuesta.page.scss'],
+  selector: 'app-respuesta64',
+  templateUrl: './respuesta64.page.html',
+  styleUrls: ['./respuesta64.page.scss'],
 })
-export class RespuestaPage implements OnInit {
-  promeva: number;
-  evaaa: number;
-  asd: number;
+export class Respuesta64Page implements OnInit {
 
   constructor(public ActivatedRoute: ActivatedRoute, public navCtrl: NavController, public alertController: AlertController) { }
 
@@ -23,15 +19,19 @@ export class RespuestaPage implements OnInit {
   epe3n: any;
   eva1n: any;
   eva2n: any;
+  eva3n:any;
   examen:any;
   mensaje:any;
   suma: any;
+  promeva:any;
   sumadecimal:any;
+  evaaa:any;
+  asd:any;
   
  
 
   volver(){
-    this.navCtrl.navigateBack('asignatura32');
+    this.navCtrl.navigateBack('asignatura64');
   }
 
   async calcular(){
@@ -40,10 +40,11 @@ export class RespuestaPage implements OnInit {
     this.epe3n = this.ActivatedRoute.snapshot.paramMap.get('epe3');
     this.eva1n = this.ActivatedRoute.snapshot.paramMap.get('eva1');
     this.eva2n = this.ActivatedRoute.snapshot.paramMap.get('eva2');
+    this.eva3n = this.ActivatedRoute.snapshot.paramMap.get('eva3');
 
     //Formula con examen
     this.suma = ((this.epe1n * 0.07) + (this.epe2n * 0.14) + 
-    (this.epe3n * 0.21) + (this.eva1n * 0.14) + (this.eva2n * 0.14)+(this.examen*0.3));
+    (this.epe3n * 0.21) + (this.eva1n * 0.07) + (this.eva2n * 0.07)+(this.eva3n*0.14)+(this.examen*0.3));
 
     this.sumadecimal= this.suma.toFixed(1);
 
@@ -70,11 +71,7 @@ if(this.examen>7){
 await alert3.present();
 }else{
 if(this.sumadecimal<4.0){
-<<<<<<< HEAD
-      await alert2.present();
-=======
   await alert2.present();
->>>>>>> f6f43b9acb84fb491fd812e462b5a23c52e66a77
     }else{
       await alert.present();
     }
@@ -90,12 +87,13 @@ if(this.sumadecimal<4.0){
     this.epe3n = this.ActivatedRoute.snapshot.paramMap.get('epe3');
     this.eva1n = this.ActivatedRoute.snapshot.paramMap.get('eva1');
     this.eva2n = this.ActivatedRoute.snapshot.paramMap.get('eva2');
+    this.eva3n = this.ActivatedRoute.snapshot.paramMap.get('eva3');
 
     //Formula sin examen
     this.suma = ((this.epe1n * 0.1) + (this.epe2n * 0.2) + 
-    (this.epe3n * 0.3) + (this.eva1n * 0.2) + (this.eva2n * 0.2));
-    
-    this.promeva=(this.eva1n * 0.2) + (this.eva2n * 0.2);
+    (this.epe3n * 0.3) + (this.eva1n * 0.1) + (this.eva2n * 0.1)+(this.eva3n*0.2));
+
+    this.promeva=(this.eva1n * 0.1) + (this.eva2n * 0.1) + (this.eva3n * 0.2);
     this.evaaa=((this.promeva)*0.6)/0.4;
     this.asd=this.promeva+this.evaaa;
 
