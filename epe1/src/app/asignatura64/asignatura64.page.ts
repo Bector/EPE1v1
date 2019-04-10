@@ -49,7 +49,7 @@ export class Asignatura64Page implements OnInit {
 
     } else {
 
-      if (this.sumadecimal < 5.5 || this.epe1 <= 3.9 || this.epe2 <= 3.9 || this.epe3 <= 3.9 || this.asd<= 3.9) {
+      if (this.sumadecimal < 5.5 || this.epe1 <= 3.9 || this.epe2 <= 3.9 || this.epe3 <= 3.9 || this.asd< 4) {
 
         this.navCtrl.navigateForward(`/respuesta64/${this.epe1}/${this.epe2}/${this.epe3}/${this.eva1}/${this.eva2}/${this.eva3}`);
       } else {

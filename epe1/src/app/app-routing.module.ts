@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'acerca', loadChildren: './acerca/acerca.module#AcercaPageModule' },
   { path: 'respuesta/:epe1/:epe2/:epe3/:eva1/:eva2', loadChildren: './respuesta/respuesta.module#RespuestaPageModule' },
   { path: 'menu', loadChildren: './menu/menu.module#MenuPageModule' },
-  { path: 'respuesta64/:epe1/:epe2/:epe3/:eva1/:eva2/:eva3', loadChildren: './respuesta64/respuesta64.module#Respuesta64PageModule' },  { path: 'respuesta96', loadChildren: './respuesta96/respuesta96.module#Respuesta96PageModule' },
+  { path: 'respuesta64/:epe1/:epe2/:epe3/:eva1/:eva2/:eva3', loadChildren: './respuesta64/respuesta64.module#Respuesta64PageModule' },
+  { path: 'respuesta96/:epe1/:epe2/:epe3/:eva1/:eva2/:eva3', loadChildren: './respuesta96/respuesta96.module#Respuesta96PageModule' },
 
 
 
