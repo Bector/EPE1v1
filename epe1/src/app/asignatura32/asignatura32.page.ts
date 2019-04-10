@@ -33,7 +33,7 @@ export class Asignatura32Page implements OnInit {
       buttons: ['OK']
     });
     
-    if(this.epe1>7 || this.epe2>7 || this.epe3>7){
+    if(this.epe1>7 || this.epe2>7 || this.epe3>7 || this.eva1>7 || this.eva2>7){
       const alert =  await this.alertController.create({
         header: 'Error',
         message: 'Las notas no pueden ser superior a 7.0',

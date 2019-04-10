@@ -5,13 +5,12 @@ import { NavController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 
 
-
 @Component({
-  selector: 'app-respuesta',
-  templateUrl: './respuesta.page.html',
-  styleUrls: ['./respuesta.page.scss'],
+  selector: 'app-respuesta64',
+  templateUrl: './respuesta64.page.html',
+  styleUrls: ['./respuesta64.page.scss'],
 })
-export class RespuestaPage implements OnInit {
+export class Respuesta64Page implements OnInit {
 
   constructor(public ActivatedRoute: ActivatedRoute, public navCtrl: NavController, public alertController: AlertController) { }
 
@@ -20,6 +19,7 @@ export class RespuestaPage implements OnInit {
   epe3n: any;
   eva1n: any;
   eva2n: any;
+  eva3n:any;
   examen:any;
   mensaje:any;
   suma: any;
@@ -28,7 +28,7 @@ export class RespuestaPage implements OnInit {
  
 
   volver(){
-    this.navCtrl.navigateBack('asignatura32');
+    this.navCtrl.navigateBack('asignatura64');
   }
 
   async calcular(){
@@ -37,10 +37,11 @@ export class RespuestaPage implements OnInit {
     this.epe3n = this.ActivatedRoute.snapshot.paramMap.get('epe3');
     this.eva1n = this.ActivatedRoute.snapshot.paramMap.get('eva1');
     this.eva2n = this.ActivatedRoute.snapshot.paramMap.get('eva2');
+    this.eva3n = this.ActivatedRoute.snapshot.paramMap.get('eva3');
 
     //Formula con examen
     this.suma = ((this.epe1n * 0.07) + (this.epe2n * 0.14) + 
-    (this.epe3n * 0.21) + (this.eva1n * 0.14) + (this.eva2n * 0.14)+(this.examen*0.3));
+    (this.epe3n * 0.21) + (this.eva1n * 0.07) + (this.eva2n * 0.07)+(this.eva3n*0.14)+(this.examen*0.3));
 
     this.sumadecimal= this.suma.toFixed(1);
 
@@ -83,10 +84,11 @@ if(this.sumadecimal<4.0){
     this.epe3n = this.ActivatedRoute.snapshot.paramMap.get('epe3');
     this.eva1n = this.ActivatedRoute.snapshot.paramMap.get('eva1');
     this.eva2n = this.ActivatedRoute.snapshot.paramMap.get('eva2');
+    this.eva3n = this.ActivatedRoute.snapshot.paramMap.get('eva3');
 
     //Formula sin examen
     this.suma = ((this.epe1n * 0.1) + (this.epe2n * 0.2) + 
-    (this.epe3n * 0.3) + (this.eva1n * 0.2) + (this.eva2n * 0.2));
+    (this.epe3n * 0.3) + (this.eva1n * 0.1) + (this.eva2n * 0.1)+(this.eva3n*0.2));
 
     this.sumadecimal= this.suma.toFixed(1);
     if(this.sumadecimal<5.5){
