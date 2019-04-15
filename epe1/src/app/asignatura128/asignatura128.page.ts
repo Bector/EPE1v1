@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { AlertController } from '@ionic/angular';
 })
 export class Asignatura128Page implements OnInit {
 
-  constructor(public navCtrl: NavController, public alertController: AlertController) { }
+  constructor(public navCtrl: NavController, public alertController: AlertController, public ToastController: ToastController) { }
   epe1: any;
   epe2: any;
   epe3: any;
@@ -19,7 +19,7 @@ export class Asignatura128Page implements OnInit {
   eva2: any;
   eva3: any;
   eva4: any;
-  promeva:any;
+  promeva: any;
   sumadecimal: any;
   evaaa: any;
   asd: any;
@@ -41,25 +41,37 @@ export class Asignatura128Page implements OnInit {
       message: 'Te eximes de examen con un: ' + this.sumadecimal,
       buttons: ['OK']
     });
-
-    if (this.epe1 > 7 || this.epe2 > 7 || this.epe3 > 7 || this.epe4 > 7 || this.eva1 > 7 || this.eva2 > 7 || this.eva3 > 7 || this.eva4 > 7) {
-      const alert = await this.alertController.create({
-        header: 'Error',
-        message: 'Las notas no pueden ser superior a 7.0',
-        buttons: ['OK']
+    if (this.epe1 == null || this.epe2 == null || this.epe3 == null || this.epe4 == null ||
+      this.eva1 == null || this.eva2 == null || this.eva3 == null || this.eva4 == null) {
+      const toast = await this.ToastController.create({
+        message: 'No pueden haber campos vacíos.',
+        position: 'middle',
+        duration: 2000
       });
-      await alert.present();
+      toast.present();
 
     } else {
-      if (this.sumadecimal < 5.5 || this.epe1 <= 3.9 || this.epe2 <= 3.9 || this.epe3 <= 3.9 || this.epe4 <= 3.9 || this.asd< 4) {
 
-        this.navCtrl.navigateForward(`/respuesta128/${this.epe1}/${this.epe2}/${this.epe3}/${this.epe4}/${this.eva1}/${this.eva2}/${this.eva3}/${this.eva4}`);
-      } else {
+      if (this.epe1 > 7 || this.epe2 > 7 || this.epe3 > 7 || this.epe4 > 7 || this.eva1 > 7 || this.eva2 > 7 || this.eva3 > 7 || this.eva4 > 7) {
+        const alert = await this.alertController.create({
+          header: 'Error',
+          message: 'Las notas no pueden ser superior a 7.0',
+          buttons: ['OK']
+        });
         await alert.present();
+
+
+      } else {
+        if (this.sumadecimal < 5.5 || this.epe1 <= 3.9 || this.epe2 <= 3.9 || this.epe3 <= 3.9 || this.epe4 <= 3.9 || this.asd < 4) {
+
+          this.navCtrl.navigateForward(`/respuesta128/${this.epe1}/${this.epe2}/${this.epe3}/${this.epe4}/${this.eva1}/${this.eva2}/${this.eva3}/${this.eva4}`);
+        } else {
+          await alert.present();
+        }
+
       }
 
     }
-
   }
 
   volver() {
