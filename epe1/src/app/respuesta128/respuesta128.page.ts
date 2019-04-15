@@ -27,6 +27,14 @@ export class Respuesta128Page implements OnInit {
   mensaje:any;
   suma: any;
   sumadecimal:any;
+  promeva: any;
+  evaaa: any;
+  asd: any;
+  not_presentacion: any;
+  not_necesaria: any;
+  mensaje2: any;
+  not_necesariadecimal: any;
+
   
  
 
@@ -98,12 +106,33 @@ if(this.sumadecimal<4.0){
     this.suma = ((this.epe1n * 0.1) + (this.epe2n * 0.15) + (this.epe3n * 0.25) + (this.epe4n * 0.25) + (this.eva1n * 0.05) + (this.eva2n * 0.05) + (this.eva3n * 0.05) + (this.eva4n * 0.1));
 
 
-    this.sumadecimal= this.suma.toFixed(1);
-    if(this.sumadecimal<5.5){
-      this.mensaje="Te fuiste a examen con un: "+this.sumadecimal;
-    }
+    this.promeva = (this.eva1n * 0.05) + (this.eva2n * 0.05) + (this.eva3n * 0.05) + (this.eva4n * 0.1);
+    this.evaaa = ((this.promeva) * 0.75) / 0.25;
+    this.asd = this.promeva + this.evaaa;
+
+
+    //Formula nota para aprobar el examen
+    this.not_presentacion = (this.suma * 0.7);
+    this.not_necesaria = (4 - this.not_presentacion) / 0.3;
+
+    //nota para aprobar el examen con decimal
+    this.not_necesariadecimal = this.not_necesaria.toFixed(1);
+
+    //nota de presentacion a examen
+    this.sumadecimal = this.suma.toFixed(1);
+
+    if (this.sumadecimal < 5.5 || this.evaaa < 4.0) {
+      this.mensaje = "Te fuiste a examen con un: " + this.sumadecimal;
+
+      //condición si nota necesaria es superior a 7 reprueba el ramo.
+      if (this.not_necesariadecimal > 7.0) {
+        this.mensaje2 = "Reprobaste, necesitas un: " + this.not_necesariadecimal;
+      } else {
+        this.mensaje2 = "Necesitas un: " + this.not_necesariadecimal;
+      }
 
   }
 
 }
 
+}

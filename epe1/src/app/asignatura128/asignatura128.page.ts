@@ -19,7 +19,10 @@ export class Asignatura128Page implements OnInit {
   eva2: any;
   eva3: any;
   eva4: any;
+  promeva:any;
   sumadecimal: any;
+  evaaa: any;
+  asd: any;
 
 
   async enviar() {
@@ -28,7 +31,9 @@ export class Asignatura128Page implements OnInit {
     let suma = ((this.epe1 * 0.1) + (this.epe2 * 0.15) + (this.epe3 * 0.25) + (this.epe4 * 0.25) + (this.eva1 * 0.05) + (this.eva2 * 0.05) + (this.eva3 * 0.05) + (this.eva4 * 0.1));
     this.sumadecimal = suma.toFixed(1);
 
-    let suma2 = this.eva1 + this.eva2 + this.eva3 + this.eva4
+    this.promeva = (this.eva1 * 0.05) + (this.eva2 * 0.05) + (this.eva3 * 0.05) + (this.eva4 * 0.1);
+    this.evaaa = ((this.promeva) * 0.75) / 0.25;
+    this.asd = this.promeva + this.evaaa;
 
     const alert = await this.alertController.create({
       header: 'Felicitaciones',
@@ -46,7 +51,7 @@ export class Asignatura128Page implements OnInit {
       await alert.present();
 
     } else {
-      if (this.sumadecimal < 5.5 || this.epe1 <= 3.9 || this.epe2 <= 3.9 || this.epe3 <= 3.9 || this.epe4 <= 3.9) {
+      if (this.sumadecimal < 5.5 || this.epe1 <= 3.9 || this.epe2 <= 3.9 || this.epe3 <= 3.9 || this.epe4 <= 3.9 || this.asd< 4) {
 
         this.navCtrl.navigateForward(`/respuesta128/${this.epe1}/${this.epe2}/${this.epe3}/${this.epe4}/${this.eva1}/${this.eva2}/${this.eva3}/${this.eva4}`);
       } else {

@@ -119,9 +119,9 @@ export class Respuesta64Page implements OnInit {
 
       //condición si nota necesaria es superior a 7 reprueba el ramo.
       if (this.not_necesariadecimal > 7.0) {
-        this.mensaje2 = "Reprobaste el ramo, necesitas un: " + this.not_necesariadecimal;
+        this.mensaje2 = "Reprobaste, necesitas un: " + this.not_necesariadecimal;
       } else {
-        this.mensaje2 = "necesitas un: " + this.not_necesariadecimal;
+        this.mensaje2 = "Necesitas un: " + this.not_necesariadecimal;
       }
     }
   }
