@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { summaryFileName } from '@angular/compiler/src/aot/util';
 import { NavController, IonLabel } from '@ionic/angular';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 
 
 @Component({
@@ -13,7 +12,7 @@ import { AlertController } from '@ionic/angular';
 export class Respuesta64Page implements OnInit {
 
 
-  constructor(public ActivatedRoute: ActivatedRoute, public navCtrl: NavController, public alertController: AlertController) { }
+  constructor(public ActivatedRoute: ActivatedRoute, public navCtrl: NavController, public alertController: AlertController, public ToastController : ToastController) { }
 
   epe1n: any;
   epe2n: any;
@@ -37,7 +36,7 @@ export class Respuesta64Page implements OnInit {
 
 
   volver() {
-    this.navCtrl.navigateBack('asignatura64');
+    this.navCtrl.navigateBack('menu');
   }
 
   async calcular() {
@@ -68,6 +67,15 @@ export class Respuesta64Page implements OnInit {
       message: 'Tu promedio es: ' + this.sumadecimal,
       buttons: ['OK']
     });
+
+    if (this.examen == null) {
+      const toast = await this.ToastController.create({
+        message: 'No pueden haber campos vacíos.',
+        position: 'middle',
+        duration: 2000
+      });
+      toast.present();
+    } else {
     if (this.examen > 7) {
       const alert3 = await this.alertController.create({
         header: 'Lo sentimos',
@@ -83,7 +91,7 @@ export class Respuesta64Page implements OnInit {
       }
     }
 
-
+  }
 
   }
 
