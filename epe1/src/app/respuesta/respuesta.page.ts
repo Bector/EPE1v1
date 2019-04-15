@@ -5,16 +5,12 @@ import { NavController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 
 
-
 @Component({
   selector: 'app-respuesta',
   templateUrl: './respuesta.page.html',
   styleUrls: ['./respuesta.page.scss'],
 })
 export class RespuestaPage implements OnInit {
-  promeva: number;
-  evaaa: number;
-  asd: number;
 
   constructor(public ActivatedRoute: ActivatedRoute, public navCtrl: NavController, public alertController: AlertController) { }
 
@@ -23,10 +19,19 @@ export class RespuestaPage implements OnInit {
   epe3n: any;
   eva1n: any;
   eva2n: any;
-  examen:any;
-  mensaje:any;
+  examen: any;
+  mensaje: any;
   suma: any;
-  sumadecimal:any;
+  promeva: any;
+  sumadecimal: any;
+  evaaa: any;
+  asd: any;
+  not_presentacion: any;
+  not_necesaria: any;
+  mensaje2: any;
+  not_necesariadecimal: any;
+
+
   
  
 
@@ -96,11 +101,27 @@ if(this.sumadecimal<4.0){
     this.asd=this.promeva+this.evaaa;
 
 
-    this.sumadecimal= this.suma.toFixed(1);
-    if(this.sumadecimal<5.5 || this.evaaa < 4){
-      this.mensaje="Te fuiste a examen con un: "+this.sumadecimal;
-    }
-
-  }
-
-}
+     //Formula nota para aprobar el examen
+     this.not_presentacion = (this.suma * 0.7);
+     this.not_necesaria = (4 - this.not_presentacion) / 0.3;
+ 
+     //nota para aprobar el examen con decimal
+     this.not_necesariadecimal = this.not_necesaria.toFixed(1);
+ 
+     //nota de presentacion a examen
+     this.sumadecimal = this.suma.toFixed(1);
+ 
+     if (this.sumadecimal < 5.5 || this.evaaa < 4.0) {
+       this.mensaje = "Te fuiste a examen con un: " + this.sumadecimal;
+ 
+       //condición si nota necesaria es superior a 7 reprueba el ramo.
+       if (this.not_necesariadecimal > 7.0) {
+         this.mensaje2 = "Reprobaste, necesitas un: " + this.not_necesariadecimal;
+       } else {
+         this.mensaje2 = "necesitas un: " + this.not_necesariadecimal;
+       }
+     }
+   }
+ }
+ 
+ 
