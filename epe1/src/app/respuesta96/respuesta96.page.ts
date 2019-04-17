@@ -120,7 +120,7 @@ export class Respuesta96Page implements OnInit {
     //nota de presentacion a examen
     this.sumadecimal = this.suma.toFixed(1);
 
-    if (this.sumadecimal < 5.5 || this.evaaa < 4.0) {
+    if (this.sumadecimal < 5.5 || this.evaaa < 4.0 || this.sumadecimal>5.5) {
       this.mensaje = "Te fuiste a examen con un: " + this.sumadecimal;
 
       //condición si nota necesaria es superior a 7 reprueba el ramo.
