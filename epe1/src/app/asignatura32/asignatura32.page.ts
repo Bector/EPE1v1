@@ -60,7 +60,7 @@ export class Asignatura32Page implements OnInit {
         await alert.present();
 
       } else {
-        if (this.sumadecimal < 5.5 || this.epe1 <= 3.9 || this.epe2 <= 3.9 || this.epe3 <= 3.9 || this.asd < 4) {
+        if (this.sumadecimal < 5.5 || this.epe1 < 4 || this.epe2 < 4 || this.epe3 < 4 || this.asd < 4) {
 
           this.navCtrl.navigateForward(`/respuesta/${this.epe1}/${this.epe2}/${this.epe3}/${this.eva1}/${this.eva2}`);
         } else {

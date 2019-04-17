@@ -129,7 +129,7 @@ export class Respuesta64Page implements OnInit {
       if (this.not_necesariadecimal > 7.0) {
         this.mensaje2 = "Reprobaste, necesitas un: " + this.not_necesariadecimal;
       } else {
-        this.mensaje2 = "Necesitas un: " + this.not_necesariadecimal;
+        this.mensaje2 = "Necesitas un: " + (this.not_necesariadecimal-0.1).toFixed(1);
       }
     }
   }

@@ -84,7 +84,7 @@ if(this.examen>7){
   });
 await alert3.present();
 }else{
-if(this.sumadecimal<4.0){
+if(this.sumadecimal<4){
   await alert2.present();
     }else{
       await alert.present();
@@ -128,7 +128,7 @@ if(this.sumadecimal<4.0){
        if (this.not_necesariadecimal > 7.0) {
          this.mensaje2 = "Reprobaste, necesitas un: " + this.not_necesariadecimal;
        } else {
-         this.mensaje2 = "necesitas un: " + this.not_necesariadecimal;
+         this.mensaje2 = "necesitas un: " + (this.not_necesariadecimal-0.1).toFixed(1);
        }
      }
    }
